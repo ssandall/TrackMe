@@ -1,5 +1,7 @@
 const devices = JSON.parse(localStorage.getItem('devices')) || [];
 
+$('#navbar').load('navbar.html');
+
 devices.forEach(function(device) {
     $('#devices tbody').append(`
     <tr>
