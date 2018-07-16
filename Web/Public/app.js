@@ -19,6 +19,17 @@ devices.forEach(function(device) {
     location.href = '/';
    });
 
+   $('#login').on('click', function() { 
+    const username = $('#username').val();
+    const password = $('#password').val();
+   });
+
+   $('#register-account').on('click', function() { 
+    const username = $('#username').val();
+    const password = $('#password').val();
+    const confPassword = $('#confirm-password').val();
+   });
+
    $('#send-command').on('click', function() {
     const command = $('#command').val();
     console.log(`command is: ${command}`);
