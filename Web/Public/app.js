@@ -14,7 +14,7 @@ devices.forEach(function(device) {
     const name = $('#name').val();
     devices.push({ user, name });
     localStorage.setItem('devices', JSON.stringify(devices));
-    location.href = 'device-list.html';
+    location.href = '/';
    });
 
    $('#send-command').on('click', function() {
