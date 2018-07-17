@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="style.css" />
         <title>TrackMe</title>
     </head>
+
     <body>
         <div id="navbar"></div>
         <div class="container">
@@ -17,20 +18,23 @@
         </div>
         <div class="form-group">
                 <label for="user">Username</label>
-                <input type="text" class="form-control" id="username" />
+                <input type="text" placeholder="Enter Username" class="form-control" id="username" />
+                <div id='messageError' ></div>
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="text" class="form-control" id="password" />
+            <input type="text" placeholder="Enter Password" class="form-control" id="password" />
         </div>
 
         <div class="form-group">
                 <label for="confirm-password"> Confirm Password</label>
-                <input type="text" class="form-control" id="confirm-password" />
+                <input type="text" placeholder="Enter Password" class="form-control" id="confirm-password" />
         </div>
 
-        <button class="btn btn-success" id="register-account">Register</button>
+        <div id='passwordError'></div>
+
+        <button class="btn btn-primary" id='register-account' href="/login.html">Register</button>
         <br>
         <br>
 
@@ -42,6 +46,7 @@
         <script src="app.js">
         </script>
     </body>
+
     <footer>
             <h5> Copyright Suriya Sandall 2018</h5>
     </footer>
