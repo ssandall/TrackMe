@@ -16,6 +16,10 @@ app.get('/send-command', (req, res) => {
     res.sendFile(`${base}/send-command.html`);
 });
 
+app.get('/device-list', (req, res) => {
+    res.sendFile(`${base}/device-list.html`);
+});
+
 app.get('/about-me', (req, res) => {
     res.sendFile(`${base}/about-me.html`);
 });
