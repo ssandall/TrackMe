@@ -29,3 +29,7 @@ $('#send-command').on('click', function() {
 $('#navbar').load('navbar.html',function(){
     //console.log('NAVBAR');
 });
+
+$('#footer').load('footer.html',function(){
+    //console.log('FOOTER');
+});
