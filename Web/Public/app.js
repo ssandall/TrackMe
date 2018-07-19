@@ -1,4 +1,5 @@
 const devices = JSON.parse(localStorage.getItem('devices')) || [];
+
 //devices.push({ user: "Mary", name: "Mary's iPhone" });
 //devices.push({ user: "Alex", name: "Alex's Surface Pro" });
 //devices.push({ user: "Mary", name: "Mary's MacBook" });
@@ -20,6 +21,37 @@ $('#add-device').on('click', function() {
     location.href = 'device-list.html'
     console.log(devices);
 });
+
+$('#login').on('click', function() { 
+    const username = $('#username').val();
+    const password = $('#password').val();
+});
+
+const users = JSON.parse(localStorage.getItem('users')) || [];
+
+$('#register-account').on('click', function() { 
+    const username = $('#username').val();
+    const password = $('#password').val();
+    const passwordConfirm = $('confirm-password').val();
+
+    const exists = users.find(user => user.name === username);
+
+    if (exists){
+        console.log('User already exists ERROR')
+    }
+    else if (password !== passwordConfirm){
+        console.log('Error Passwords Do not match')
+    }
+    else {
+        users.push({ name: username, password})
+        localStorage.setItem('users',JSON.stringify(users))
+        console.log('Account Creation Success')
+        location.href = 'login.html'
+    }
+
+});
+
+
 
 $('#send-command').on('click', function() {
     const command = $('#command').val();
