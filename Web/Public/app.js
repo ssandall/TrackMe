@@ -27,20 +27,20 @@ $('#login').on('click', function() {
     const password = $('#password').val();
 });
 
-const users = JSON.parse(localStorage.getItem('users')) || [];
 
 $('#register-account').on('click', function() { 
     const username = $('#username').val();
     const password = $('#password').val();
-    const passwordConfirm = $('confirm-password').val();
+    const passwordConfirm = $('#confirm-password').val();
 
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     const exists = users.find(user => user.name === username);
 
     if (exists){
-        console.log('User already exists ERROR')
+        $('#userError').append('<p class="alert alert-danger" style="font-style: italic"> ERROR: User already exists. Click <a href="/login">here</a> to login. </p>')
     }
     else if (password !== passwordConfirm){
-        console.log('Error Passwords Do not match')
+        $('#passwordError').append('<p class="alert alert-danger" style="font-style: italic"> ERROR: Password does not match </p>')
     }
     else {
         users.push({ name: username, password})
@@ -48,7 +48,6 @@ $('#register-account').on('click', function() {
         console.log('Account Creation Success')
         location.href = 'login.html'
     }
-
 });
 
 
