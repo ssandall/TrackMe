@@ -25,6 +25,24 @@ $('#add-device').on('click', function() {
 $('#login').on('click', function() { 
     const username = $('#username').val();
     const password = $('#password').val();
+
+    
+    let isAuthenticated = JSON.parse(localStorage.getItem('isAuthenticated')) || false;
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const existingAccount = users.find(user => (user.name === username) && (user.password === password));
+    const incorrectPassword = users.find(user => (user.name === username) && (user.password !== password));
+
+    if (incorrectPassword){
+        $('#incorrectPassword').append('<p class="alert alert-danger" style="font-style: italic"> ERROR: Password is incorrect</p>')
+    }
+    else if (!existingAccount){
+        $('#loginError').append('<p class="alert alert-danger" style="font-style: italic"> ERROR: Account does not exist. Click <a href="/registration">here</a> to create an account. </p>')
+    }
+    else {
+        isAuthenticated = true;
+        localStorage.setItem('isAuthenticated', JSON.stringify(isAuthenticated));
+        location.href = "/"
+    }
 });
 
 
