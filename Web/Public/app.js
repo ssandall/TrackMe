@@ -45,6 +45,10 @@ $('#login').on('click', function() {
     }
 });
 
+const logout = () => {
+    localStorage.removeItem('isAuthenticated');
+    location.href = '/login';
+}
 
 $('#register-account').on('click', function() { 
     const username = $('#username').val();
