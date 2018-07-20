@@ -7,6 +7,7 @@
     <div class="collapse navbar-collapse" id="expanded-nav">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="/">Devices</a>
+            <a class="nav-item nav-link" href="/device-history">Device History</a>
             <a class="nav-item nav-link" href="/register-device">Register Device</a>
             <a class="nav-item nav-link" href="/send-command">Send Command</a>
             <a class="nav-item nav-link" href="/about-me">About Me</a>
@@ -24,7 +25,7 @@
         } else {
         $('#auth-nav').append(loginElement);
         }
-        
+
         $('#logout-button').on('click',function(){
             console.log('Button Clicked')
             localStorage.removeItem('isAuthenticated');
