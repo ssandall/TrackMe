@@ -1,5 +1,5 @@
+console.log('loading')
 const devices = JSON.parse(localStorage.getItem('devices')) || [];
-
 //devices.push({ user: "Mary", name: "Mary's iPhone" });
 //devices.push({ user: "Alex", name: "Alex's Surface Pro" });
 //devices.push({ user: "Mary", name: "Mary's MacBook" });
@@ -45,10 +45,11 @@ $('#login').on('click', function() {
     }
 });
 
-const logout = () => {
-    localStorage.removeItem('isAuthenticated');
-    location.href = '/login';
-}
+//Logout Features have been moved to script tag in navbar.html
+//    const logout = () => {
+//        localStorage.removeItem('isAuthenticated');
+//        location.href = '/login';
+//    }
 
 $('#register-account').on('click', function() { 
     const username = $('#username').val();
