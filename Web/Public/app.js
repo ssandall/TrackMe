@@ -86,3 +86,7 @@ $('#navbar').load('navbar.html',function(){
 $('#footer').load('footer.html',function(){
     //console.log('FOOTER');
 });
+
+$('#logo').load('logo.html',function(){
+    //console.log('LOGO');
+});
