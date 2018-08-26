@@ -54,6 +54,7 @@
       ]
     },
     {
+      "id": 4,
       "name": "Bob's Samsung Galaxy",
       "user": "bob",
       "sensorData": [
@@ -65,8 +66,7 @@
             "lon": 145.101386
           }
         }
-      ],
-      "id": 4
+      ]
     }
   ]
 }
