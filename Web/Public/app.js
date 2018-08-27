@@ -1,4 +1,6 @@
-$.get('http://localhost:3001/devices')
+const API_URL = 'http://localhost:5000/api';
+
+$.get('`${API_URL}/devices`')
 .then(response => {
   response.forEach(device => {
         $('#devices tbody').append(`
